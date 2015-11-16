@@ -79,8 +79,7 @@ public class Program {
 		System.out.println();
 		System.out.println("Type 'help' to access the user input menu");
 
-		// loop until quit is typed.
-		
+		// do-while loop for the user to interface through string-based options
 		String line = scanner.next();
 		do {
 
