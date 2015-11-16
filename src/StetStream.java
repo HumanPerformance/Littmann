@@ -2,6 +2,7 @@
 // Stethoscope Audio Stream to Computer
 // Fluvio L Lobo Fenoglietto
 
+import com.mmm.healthcare.scope.Stethoscope;
 
 public class StetStream {
 
