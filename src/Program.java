@@ -77,17 +77,22 @@ public class Program {
 		System.out.println();
 		System.out.println("Listening to stethoscope button events.");
 		System.out.println();
+		System.out.println("Type 'stream2pc' to stream audio from the stethoscope to the computer");
+		System.out.println();
 		System.out.println("Type 'quit' to exit the program...");
 
 		// loop until quit is typed.
 		String line = scanner.next();
 		while (!line.equalsIgnoreCase("quit")) {
+			// System.out.println(">>"); // Hoping to use this for recurrent "help" messages
 			line = scanner.next();
 		}
 
 		// disconnect the stethoscope.
-		System.out.println("Disconnecting from stethoscope...");
-		stethoscope.disconnect();
+		if (line.equalsIgnoreCase("quit")) {
+			System.out.println("Disconnecting from stethoscope...");
+			stethoscope.disconnect();
+		}
 
 		System.exit(0);
 	}
