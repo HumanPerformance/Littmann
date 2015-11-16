@@ -86,8 +86,10 @@ public class Program {
 			line = scanner.next();
 		}
 
-		// disconnect the stethoscope.
-		if (line.equalsIgnoreCase("quit")) {
+		// user input alternatives
+		if (line.equalsIgnoreCase("help")) {
+			helpUserInput();		
+		} else if (line.equalsIgnoreCase("quit")) {
 			System.out.println("Disconnecting from stethoscope...");
 			stethoscope.disconnect();
 		}
