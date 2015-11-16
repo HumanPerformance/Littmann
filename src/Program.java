@@ -74,8 +74,8 @@ public class Program {
 
 		setDisplayWithSampleImage(stethoscope);
 
-		System.out.println();
-		System.out.println("Listening to stethoscope button events.");
+		// System.out.println();
+		// System.out.println("Listening to stethoscope button events.");
 		System.out.println();
 		System.out.println("Type 'stream2pc' to stream audio from the stethoscope to the computer");
 		System.out.println();
