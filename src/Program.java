@@ -369,6 +369,11 @@ public class Program {
 		} // End of while
 	}
 	
+	/**
+	 * Sets stethoscope display using the sample bitmap image
+	 * 
+	 * @param stethoscope
+	 */
 	private static void setDisplayWithSampleImage(Stethoscope stethoscope) {
 		String name = "sample.bmp";
 
