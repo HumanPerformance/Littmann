@@ -330,6 +330,12 @@ public class Program {
 		return stethoscope;
 	}
 
+	/**
+	 * Streams audio from the connected stethoscopes into the computer
+	 * 
+	 * @param stethoscope
+	 * @throws IOException
+	 */
 	private static void streamfromStethoscope(Stethoscope stethoscope) throws IOException {
 		
 		// Stream audio from the stethoscope to the computer
