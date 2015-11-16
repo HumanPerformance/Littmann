@@ -32,8 +32,9 @@ public class BTconnect {
 			Stethoscope stethoscope = pairedStethoscopes.get(0);
 			try {
 				stethoscope.connect();
+				System.out.println("Successfully connected to stethoscope!");
 			} catch (IOException e) {
-				System.out.println("Could not connect to the stethoscope!!");
+				System.out.println("Could not connect to the stethoscope!");
 			}		
 			
 		} else if (numberofStethoscopes == 0) {
@@ -41,9 +42,8 @@ public class BTconnect {
 			System.out.println("No paired Stethoscopes were found!");
 			System.out.println("Pair a bluetooth-enabled device and re-execute this program!");
 			
-		}
+		} // End of if-statement
 
+	} // End of main
 
-	}
-
-}
+} // End of BTconnect class
