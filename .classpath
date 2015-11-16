@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Littmann Stethoscope SDK/Java 1.2.369/bin/bluecove-2.1.1-SNAPSHOT-CUSTOM.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Program%20Files%20(x86)/Littmann%20Stethoscope%20SDK/Java%201.2.369/bin/bluecove-2.1.1-SNAPSHOT-CUSTOM.jar!/docs"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Littmann Stethoscope SDK/Java 1.2.369/bin/log4j-1.2.16.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Program%20Files%20(x86)/Littmann%20Stethoscope%20SDK/Java%201.2.369/bin/log4j-1.2.16.jar!/docs"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Littmann Stethoscope SDK/Java 1.2.369/bin/stethoscope-1.2.369.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Program%20Files%20(x86)/Littmann%20Stethoscope%20SDK/Java%201.2.369/bin/stethoscope-1.2.369.jar!/docs"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
