@@ -77,9 +77,7 @@ public class Program {
 		// System.out.println();
 		// System.out.println("Listening to stethoscope button events.");
 		System.out.println();
-		System.out.println("Type 'stream2pc' to stream audio from the stethoscope to the computer");
-		System.out.println();
-		System.out.println("Type 'quit' to exit the program...");
+		System.out.println("Type 'help' to access the user input menu");
 
 		// loop until quit is typed.
 		String line = scanner.next();
@@ -96,6 +94,23 @@ public class Program {
 
 		System.exit(0);
 	}
+	
+	/**
+	 * Help report
+	 * 
+	 * Program displays a list of options available to the user through the console
+	 * 
+	 */
+	private static void helpUserInput() {
+		
+		System.out.println("==============================================");
+		System.out.println("USER INPUT MENU");
+		System.out.println("==============================================");
+		System.out.println("'help' - prompts the user input menu");
+		System.out.println("'stream2pc' - streams audio to PC");
+		System.out.println("'quit' - ends program, disconnects devices");
+
+	} // End of helpUserInput
 
 	/**
 	 * Generates the stethoscope report.
