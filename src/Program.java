@@ -49,7 +49,7 @@ public class Program {
 		}
 
 		// listens to button clicks, errors, low battery, etc on stethoscope.
-		addStethoscopeListener(stethoscope);
+		// addStethoscopeListener(stethoscope);
 
 		System.out.println();
 		System.out.println("Attempting to connect to " + stethoscope.getSerialNumber() + " stethoscope.");
@@ -133,7 +133,7 @@ public class Program {
 	 * @param stethoscope
 	 *            The connected stethoscope.
 	 */
-	private static void addStethoscopeListener(final Stethoscope stethoscope) {
+	/** private static void addStethoscopeListener(final Stethoscope stethoscope) {
 		stethoscope.addStethoscopeListener(new IStethoscopeListener() {
 
 			@Override
@@ -280,6 +280,7 @@ public class Program {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Finds a stethoscope to connect to from the user.
