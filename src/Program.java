@@ -80,33 +80,38 @@ public class Program {
 		System.out.println("Type 'help' to access the user input menu");
 
 		// loop until quit is typed.
+		
 		String line = scanner.next();
-		while (!line.equalsIgnoreCase("quit")) {
-			// System.out.println(">>"); // Hoping to use this for recurrent "help" messages
-			line = scanner.next();
-		}
+		do {
 
-		// user input alternatives
-		if (line.equalsIgnoreCase("help")) {
-			helpUserInput();		
-		} else if (line.equalsIgnoreCase("quit")) {
-			System.out.println("Disconnecting from stethoscope...");
-			stethoscope.disconnect();
-		}
-
+			// user input alternatives
+			if (line.equalsIgnoreCase("help")) {
+				helpUserInput(stethoscope);
+				line = scanner.next();
+			}
+			
+		} while (!line.equalsIgnoreCase("quit"));
+		
+		System.out.println("Disconnecting from stethoscope...");
+		stethoscope.disconnect();
 		System.exit(0);
-	}
+
+	
+	} // End of main
 	
 	/**
 	 * Help report
 	 * 
 	 * Program displays a list of options available to the user through the console
 	 * 
+	 * @param stethoscope
+	 *            A connected stethoscope.
 	 */
-	private static void helpUserInput() {
+	private static void helpUserInput(Stethoscope stethoscope) {
 		
 		System.out.println("==============================================");
 		System.out.println("USER INPUT MENU");
+		System.out.println("Name = " + stethoscope.getName());
 		System.out.println("==============================================");
 		System.out.println("'help' - prompts the user input menu");
 		System.out.println("'stream2pc' - streams audio to PC");
