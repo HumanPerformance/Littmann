@@ -2,13 +2,15 @@
 // Bluetooth connection to 3M Littmann Stethoscope
 // Fluvio L Lobo Fenoglietto
 
+
+// Imported libraries and dependencies
 import java.io.IOException;
 import java.util.Vector;
-
 import com.mmm.healthcare.scope.ConfigurationFactory;
 import com.mmm.healthcare.scope.IBluetoothManager;
 import com.mmm.healthcare.scope.Stethoscope;
 
+// Bluetooth connect class
 public class BTconnect {
 
 	public static void main(String[] args) {
@@ -17,10 +19,9 @@ public class BTconnect {
 		IBluetoothManager manager = ConfigurationFactory.getBluetoothManager();
 		Vector<Stethoscope> pairedStethoscopes = manager.getPairedDevices();
 		
-		
-		int numberofStethoscopes = pairedStethoscopes.size();
-		
-		if (numberofStethoscopes != 0) {
+		// Verification of paired devices
+		int numberofStethoscopes = pairedStethoscopes.size();	
+		if (numberofStethoscopes > 0) {
 		
 			// List discovered devices
 			for (Stethoscope discoveredStethoscope : pairedStethoscopes) {
