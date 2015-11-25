@@ -89,6 +89,11 @@ public class Program {
 				line = scanner.next();
 			}
 			
+			if (line.equalsIgnoreCase("battery")) {
+				batterylevel(stethoscope);
+				line = scanner.next();
+			}
+			
 		} while (!line.equalsIgnoreCase("quit"));
 		
 		System.out.println("Disconnecting from stethoscope...");
@@ -97,6 +102,33 @@ public class Program {
 
 	
 	} // End of main
+	
+
+	/**
+	 * Battery Level
+	 * 
+	 * Program notifies user of the current battery level
+	 *
+	 * @param stethoscope
+	 *            A connected stethoscope.
+	 * 
+	 */
+	
+	private static void batterylevel(Stethoscope stethoscope) {
+		
+		int battlvl = stethoscope.getBatteryLevel();
+		
+		if (battlvl == 3) {
+			System.out.println("Battery level between 50% - 100%");
+		} else if (battlvl == 2) {
+			System.out.println("Battery level between 25% - 50%");
+		} else if (battlvl == 1) {
+			System.out.println("Battery level between 10% - 25%");
+		} else if (battlvl == 0) {
+			System.out.println("Battery level below 10%");
+		}
+		
+	}
 	
 	/**
 	 * Help report
@@ -115,6 +147,8 @@ public class Program {
 		System.out.println("'help' - prompts the user input menu");
 		System.out.println("'stream2pc' - streams audio to PC");
 		System.out.println("'quit' - ends program, disconnects devices");
+		System.out.println("'battery' - read the battery level ");
+		System.out.println("'getfilter' - read current filter configuration");
 
 	} // End of helpUserInput
 
@@ -419,4 +453,5 @@ public class Program {
 			System.out.println("Could not find the bitmap " + name + " file.");
 		}
 	}
+	
 }
