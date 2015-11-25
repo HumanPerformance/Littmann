@@ -87,9 +87,7 @@ public class Program {
 			if (line.equalsIgnoreCase("help")) {
 				helpUserInput(stethoscope);
 				line = scanner.next();
-			}
-			
-			if (line.equalsIgnoreCase("battery")) {
+			} else if (line.equalsIgnoreCase("battery")) {
 				batterylevel(stethoscope);
 				line = scanner.next();
 			}
