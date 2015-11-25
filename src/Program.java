@@ -9,6 +9,7 @@
 
 import java.io.IOException;
 import java.io.InputStream;
+import javax.sound.*;
 import java.util.*;
 
 import com.mmm.healthcare.scope.*;
@@ -90,6 +91,9 @@ public class Program {
 			} else if (line.equalsIgnoreCase("battery")) {
 				batterylevel(stethoscope);
 				line = scanner.next();
+			} else if (line.equalsIgnoreCase("stream2pc")) {
+				stream2pc(stethoscope);
+				line = scanner.next();
 			}
 			
 		} while (!line.equalsIgnoreCase("quit"));
@@ -126,7 +130,7 @@ public class Program {
 			System.out.println("Battery level below 10%");
 		}
 		
-	}
+	} // End of battery level 
 	
 	/**
 	 * Help report
@@ -395,20 +399,22 @@ public class Program {
 	 * @param stethoscope
 	 * @throws IOException
 	 */
-	private static void streamfromStethoscope(Stethoscope stethoscope) throws IOException {
+	private static void stream2pc(Stethoscope stethoscope) throws IOException {
 		
-		// Stream audio from the stethoscope to the computer
+		// The most recent version of this code controls the streaming of data with a counter on the number of audio packets
+		
+		// Variable initialization
 		int numberOfAudioPacketsToReceive = 1000;
-		byte[] stethoscopeAudioData = new byte[128 * numberOfAudioPacketsToReceive];
+		byte[] stethoscopeAudioData = new byte[128*numberOfAudioPacketsToReceive];
 		byte[] packet = new byte[128];
 		int offSet = 0;
 		
-		System.out.println("Starting Audio Input");
+		// Begin Audio Streaming
+		System.out.println("Starting Audio Stream to PC");
 		stethoscope.startAudioInput();
-		
+		 
 		int receivedPackets = 0;
 		while (receivedPackets < numberOfAudioPacketsToReceive) {
-			
 			int read = stethoscope.getAudioInputStream().read(packet, 0, packet.length);
 			
 			if (read > 0) {
@@ -417,16 +423,23 @@ public class Program {
 					
 					// Add the received packet to the audio data
 					stethoscopeAudioData[k + offSet] = packet[k];
+					System.out.println(packet[k]);
 					
-				} // End of for
+				} // End of for-loop
 				
 				receivedPackets++;
 				offSet += packet.length;
 				
-			} // End of if
+			} // End of if-statement
 			
-		} // End of while
-	}
+		} // End of while-loop
+		
+		System.out.println("Stopping Audio Stream to PC");
+		stethoscope.stopAudioInput();
+		
+		
+		
+	} // End of stream2pc function
 	
 	/**
 	 * Sets stethoscope display using the sample bitmap image
