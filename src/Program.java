@@ -9,7 +9,6 @@
 
 import java.io.IOException;
 import java.io.InputStream;
-import javax.sound.*;
 import java.util.*;
 
 import com.mmm.healthcare.scope.*;
