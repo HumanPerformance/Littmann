@@ -10,6 +10,8 @@
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
+import processing.core.*;
+
 
 import com.mmm.healthcare.scope.*;
 
